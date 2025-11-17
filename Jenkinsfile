@@ -8,12 +8,7 @@ pipeline {
         TAG = "build-${env.BUILD_NUMBER}"
     }
 
-    stages {
-
-        stage('Checkout') {
-            steps {
-                checkout scm
-            }
+    stages { stage('Checkout') { steps { checkout scm } // lit le même repo que le job }
         }
 
         stage('Docker Build') {
